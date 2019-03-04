@@ -1,24 +1,23 @@
-// Experience Muhammad
-// Jienan Chen
-// March 3, 2019
+// Project Title
+// Your Name
+// Date
 //
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-//instruction image
-let instructions;
-
 //Muhammad image
+let instructions;
 let muhammadImage;
 let secondMuhammad;
 
-//control images
+
 let display;
 
-//control volume
+//sounds
+//volume control
+
 let dynamic;
 
-//sounds (in order of numbers on the keyboard)
 //sound set 1
 let again;
 let order;
@@ -82,18 +81,27 @@ let lateComer;
 let ok;
 let welcome;
 
-function preload(){
+//sound set 0
+let gregory; 
+let gun; 
+let excuse;
+let reprise; 
+let sun; 
+
+
+
+
+function preload() {
   //image preload
-  //instructions = loadImage("instructionse.PNG");
   muhammadImage = loadImage("assets/muhammad.png");
-  secondMuhammad = loadImage("assets/muhammad 1.png");
-  instructions = loadImage("assets/Capture 13.JPG");
+  secondMuhammad = loadImage("assets/muhammad1.png");
+  // instructions = loadImage("assts/muhammadMENU.png");
 
   //ensure audio compatability
   soundFormats("wav", "m4a");
 
   //sound set 1 preload
-  again = loadSound("assts/LetsDoThisAgain.m4a");
+  again = loadSound("assets/LetsDoThisAgain.m4a");
   order = loadSound("assets/order.m4a");
   question = loadSound("assets/question.m4a");
   imperatif = loadSound("assets/violentOrder.m4a");
@@ -117,7 +125,7 @@ function preload(){
   awkwardMoment = loadSound("assets/awkwardness.m4a");
   notHappy = loadSound("assets/discontent.m4a");
   mansbridge = loadSound("assets/false mansbridge.m4a");
-  lady = loadSound("assets/Hellier-1.wav");
+  lady = loadSound("assets/Hellier.wav");
   moreFrench = loadSound("assets/more french.m4a");
 
   //sound set 5 preload
@@ -149,11 +157,11 @@ function preload(){
   water = loadSound("assets/water.m4a");
 
   //sound set 9 preload
-  politician = loadSound("assets/jamal.m4a");
-  language = loadSound("assets/late.m4a");
-  lateComer = loadSound("assets/late.m4a");
-  ok = loadSound("assets/ok.m4a");
-  welcome = loadSound("assets/welcome.m4a");
+  // politician = loadSound("assets/jamal.m4a");
+  // language = loadSound("assets/late.m4a");
+  // lateComer = loadSound("assets/late.m4a");
+  // ok = loadSound("assets/ok.m4a");
+  // welcome = loadSound("assets/welcome.m4a");
 
   //sound set 0 preload
   gregory = loadSound("assets/director.m4a");
@@ -164,7 +172,10 @@ function preload(){
 }
 
 
+
+
 function setup() {
+
   createCanvas(windowWidth, windowHeight);
   background(instructions);
 
@@ -177,145 +188,32 @@ function draw() {
   keyPressed();
 }
 
-
-function setAllTheVolumes(dynamic) {
-  again.setVolume(dynamic);
-  order.setVolume(dynamic);
-  question.setVolume(dynamic);
-  imperatif.setVolume(dynamic);
-  whoops.setVolume(dynamic);
-
-  anger.setVolume(dynamic);
-  gibberish.setVolume(dynamic);
-  frustrationNoise.setVolume(dynamic);
-  haecDies.setVolume(dynamic);
-  patience.setVolume(dynamic);
-
-  end.setVolume(dynamic);
-  happy.setVolume(dynamic);
-  jienanVars.setVolume(dynamic);
-  smack.setVolume(dynamic);
-  outtake.setVolume(dynamic);
-
-  awkwardMoment.setVolume(dynamic);
-  notHappy.setVolume(dynamic);
-  mansbridge.setVolume(dynamic);
-  lady.setVolume(dynamic);
-  moreFrench.setVolume(dynamic);
-
-  distraction.setVolume(dynamic);
-  japanese.setVolume(dynamic);
-  frenchWhat.setVolume(dynamic);
-  thankYou.setVolume(dynamic);
-  cough.setVolume(dynamic);
-
-  distraction.setVolume(dynamic);
-  japanese.setVolume(dynamic);
-  frenchWhat.setVolume(dynamic);
-  thankYou.setVolume(dynamic);
-  cough.setVolume(dynamic);
-
-  precious.setVolume(dynamic);
-  explenation.setVolume(dynamic);
-  physics.setVolume(dynamic);
-  law.setVolume(dynamic);
-  advice.setVolume(dynamic);
-
-  flub.setVolume(dynamic);
-  realize.setVolume(dynamic);
-  shoot.setVolume(dynamic);
-  screwUp.setVolume(dynamic);
-  water.setVolume(dynamic);
-
-  politician.setVolume(dynamic);
-  language.setVolume(dynamic);
-  lateComer.setVolume(dynamic);
-  ok.setVolume(dynamic);
-  welcome.setVolume(dynamic);
-
-  gregory.setVolume(dynamic);
-  gun.setVolume(dynamic);
-  excuse.setVolume(dynamic);
-  reprise.setVolume(dynamic);
-  sun.setVolume(dynamic);
-}
-
-function noSound() {
-  again.stop();
-  order.stop();
-  question.stop();
-  imperatif.stop();
-  whoops.stop();
-
-  anger.stop();
-  gibberish.stop();
-  frustrationNoise.stop();
-  haecDies.stop();
-  patience.stop();
-
-  end.stop();
-  happy.stop();
-  jienanVars.stop();
-  smack.stop();
-  outtake.stop();
-
-  awkwardMoment.stop();
-  notHappy.stop();
-  mansbridge.stop();
-  lady.stop();
-  moreFrench.stop();
-
-  distraction.stop();
-  japanese.stop();
-  frenchWhat.stop();
-  thankYou.stop();
-  cough.stop();
-
-  cold.stop();
-  delight.stop();
-  uh.stop();
-  kinematics.stop();
-  comment.stop();
-
-  precious.stop();
-  explenation.stop();
-  physics.stop();
-  law.stop();
-  advice.stop();
-
-  flub.stop();
-  realize.stop();
-  shoot.stop();
-  screwUp.stop();
-  water.stop();
-
-  politician.stop();
-  language.stop();
-  lateComer.stop();
-  ok.stop();
-  welcome.stop();
-
-  gregory.stop();
-  gun.stop();
-  excuse.stop();
-  reprise.stop();
-  sun.stop();
-}
-
-function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
-    image(instructions, 0, 0);
-    instructions.resize(windowWidth, windowHeight);
-    display = "menu";
-    keyCode = "";
-  } else if (keyCode === RIGHT_ARROW) {
+function mouseMoved() {
+  if (mouseY > height / 2 && display !== "menu") {
     image(muhammadImage, 0, 0);
     muhammadImage.resize(windowWidth, windowHeight);
-    display = "";
-    keyCode = "";
+  } else if (mouseY < height / 2 && display !== "menu") {
+    image(secondMuhammad, 0, 0);
+    secondMuhammad.resize(windowWidth, windowHeight);
   }
 
-function keyTyped(){
+}
+
+
+
+function mouseWheel(event) {
+  if (event.delta > 0) {
+    dynamic = dynamic += 0.1;
+
+  } else {
+    dynamic = dynamic -= 0.1;
+
+  }
+  dynamic = constrain(dynamic, 0, 1.0);
+}
+
+
+function keyTyped() {
 
   if (key === "1" && display !== "menu" ) {
     selection = ["a", "b", "c", "d", "e"];
@@ -478,28 +376,148 @@ function keyTyped(){
   }
 }
 
-
-function mouseMoved() {
-  if (mouseY > height / 2 && display !== "menu") {
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    image(instructions, 0, 0);
+    instructions.resize(windowWidth, windowHeight);
+    display = "menu";
+    keyCode = "";
+  } else if (keyCode === RIGHT_ARROW) {
     image(muhammadImage, 0, 0);
     muhammadImage.resize(windowWidth, windowHeight);
-  } else if (mouseY < height / 2 && display !== "menu") {
-    image(secondMuhammad, 0, 0);
-    secondMuhammad.resize(windowWidth, windowHeight);
+    display = "";
+    keyCode = "";
   }
 }
 
-function mouseWheel(event) {
-  if (event.delta > 0) {
-    dynamic = dynamic += 0.1;
-  } else {
-    dynamic = dynamic -= 0.1;
-  }
-  dynamic = constrain(dynamic, 0, 1.0);
-}
 
 
 function mouseClicked() {
   noSound();
 }
+
+
+function setAllTheVolumes(dynamic) {
+  again.setVolume(dynamic);
+  order.setVolume(dynamic);
+  question.setVolume(dynamic);
+  imperatif.setVolume(dynamic);
+  whoops.setVolume(dynamic);
+
+  anger.setVolume(dynamic);
+  gibberish.setVolume(dynamic);
+  frustrationNoise.setVolume(dynamic);
+  haecDies.setVolume(dynamic);
+  patience.setVolume(dynamic);
+
+  end.setVolume(dynamic);
+  happy.setVolume(dynamic);
+  jienanVars.setVolume(dynamic);
+  smack.setVolume(dynamic);
+  outtake.setVolume(dynamic);
+
+  awkwardMoment.setVolume(dynamic);
+  notHappy.setVolume(dynamic);
+  mansbridge.setVolume(dynamic);
+  lady.setVolume(dynamic);
+  moreFrench.setVolume(dynamic);
+
+  distraction.setVolume(dynamic);
+  japanese.setVolume(dynamic);
+  frenchWhat.setVolume(dynamic);
+  thankYou.setVolume(dynamic);
+  cough.setVolume(dynamic);
+
+  distraction.setVolume(dynamic);
+  japanese.setVolume(dynamic);
+  frenchWhat.setVolume(dynamic);
+  thankYou.setVolume(dynamic);
+  cough.setVolume(dynamic);
+
+  precious.setVolume(dynamic);
+  explenation.setVolume(dynamic);
+  physics.setVolume(dynamic);
+  law.setVolume(dynamic);
+  advice.setVolume(dynamic);
+
+  flub.setVolume(dynamic);
+  realize.setVolume(dynamic);
+  shoot.setVolume(dynamic);
+  screwUp.setVolume(dynamic);
+  water.setVolume(dynamic);
+
+  politician.setVolume(dynamic);
+  language.setVolume(dynamic);
+  lateComer.setVolume(dynamic);
+  ok.setVolume(dynamic);
+  welcome.setVolume(dynamic);
+
+  gregory.setVolume(dynamic);
+  gun.setVolume(dynamic);
+  excuse.setVolume(dynamic);
+  reprise.setVolume(dynamic);
+  sun.setVolume(dynamic);
 }
+
+function noSound() {
+  again.stop();
+  order.stop();
+  question.stop();
+  imperatif.stop();
+  whoops.stop();
+
+  anger.stop();
+  gibberish.stop();
+  frustrationNoise.stop();
+  haecDies.stop();
+  patience.stop();
+
+  end.stop();
+  happy.stop();
+  jienanVars.stop();
+  smack.stop();
+  outtake.stop();
+
+  awkwardMoment.stop();
+  notHappy.stop();
+  mansbridge.stop();
+  lady.stop();
+  moreFrench.stop();
+
+  distraction.stop();
+  japanese.stop();
+  frenchWhat.stop();
+  thankYou.stop();
+  cough.stop();
+
+  cold.stop();
+  delight.stop();
+  uh.stop();
+  kinematics.stop();
+  comment.stop();
+
+  precious.stop();
+  explenation.stop();
+  physics.stop();
+  law.stop();
+  advice.stop();
+
+  flub.stop();
+  realize.stop();
+  shoot.stop();
+  screwUp.stop();
+  water.stop();
+
+  politician.stop();
+  language.stop();
+  lateComer.stop();
+  ok.stop();
+  welcome.stop();
+
+  gregory.stop();
+  gun.stop();
+  excuse.stop();
+  reprise.stop();
+  sun.stop();
+}
+
