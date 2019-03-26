@@ -244,7 +244,7 @@ function tempInstructionsAndExplenation(){
     text(legend[i], 30, instructionHeight + legendXCors[i]);
   }
   //places the HEAT in a (potential) new spot
- text("Click 0 to (potentially) change the position of HEAT (endo/exo).", 25, instructionHeight + 65 ); 
+ text("Science teachers like predictability. Click 0 to (potentially) change the position of HEAT (endo/exo).", 25, instructionHeight + 65 ); 
 }
 
 function catalystExplenationEtAl(){
