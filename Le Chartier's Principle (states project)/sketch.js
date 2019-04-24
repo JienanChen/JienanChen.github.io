@@ -253,7 +253,7 @@ function catalystExplenationEtAl(){
   fill("orange");
   textAlign(CENTER);
   textSize(height* 0.04);
-  text("Ms.Sun: A catalyst increases the rateof reaction, both forward and reverse.", width/2 , instructionHeight + 20);
+  text("Ms.Sun: A catalyst increases the rate of reaction, both forward and reverse.", width/2 , instructionHeight + 20);
   fill("black");
   textAlign(LEFT);
   textSize(height* 0.03);
