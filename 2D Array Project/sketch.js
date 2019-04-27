@@ -5,26 +5,29 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let state;
 
+//button related global variables(by Pouya)
 let buttonText = ["Spasky", "Charter"];
 let difficulty = ["Spasky", "Charter"];
 let buttonAndTextPlacement = ["3", "6"];
 let buttonX, buttonY, buttonWidth, buttonHeight;
-
 let size;
-let state;
 let startButtonX, startButtonY, startButtonWidth, startButtonHeight;
-
 let clicked = false;
 
+//grid related global variables
 let gridSize;
 let grid;
 let cellSize;
 let gridsDrawn
 
+//sounds related global variables(by Jienan)
+//Spasky sounds
 let sLoss1, sLoss2, sLoss3, sLoss4, sLoss5;
 let sWin1, sWin2, sWin3;
 
+//Charter sounds
 let cLoss1, cLoss2, cLoss3, cLoss4, cLoss5, cLoss6;
 let cWin1, cWin2;
 
