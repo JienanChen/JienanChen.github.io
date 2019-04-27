@@ -31,18 +31,25 @@ let sWin1, sWin2, sWin3;
 let cLoss1, cLoss2, cLoss3, cLoss4, cLoss5, cLoss6;
 let cWin1, cWin2;
 
+//preload sounds(by Jienan)
 function preload() {
+
+  //ensures audio compatibility
   soundFormats('wav','m4a');
+
+  //sounds to be played in the Spasky mode when Blaviken is not found
   sLoss1 = loadSound("assets/MuhammadLoss1.m4a");
   sLoss2 = loadSound("assets/MuhammadLoss2.m4a");
   sLoss3 = loadSound("assets/MuhammadLoss3.m4a");
   sLoss4 = loadSound("assets/MuhammadLoss4.m4a");
   sLoss5 = loadSound("assets/MuhammadLoss5.m4a");
   
+  //otherwise, in Spasky mode
   sWin1 = loadSound("assets/MuhammadVictory1.m4a");
   sWin2 = loadSound("assets/MuhammadVictory2.m4a");
   sWin3 = loadSound("assets/MuhammadVictory3.m4a");
   
+  //sounds to be played in the Charter mode when Blaviken is not found
   cLoss1 = loadSound("assets/charterLoss1.m4a");
   cLoss2 = loadSound("assets/charterLoss2.m4a");
   cLoss3 = loadSound("assets/charterLoss3.m4a");
@@ -50,20 +57,23 @@ function preload() {
   cLoss5 = loadSound("assets/charterLoss5.m4a");
   cLoss6 = loadSound("assets/charterLoss6.wav");
   
+  //otherwise, in Charter mode
   cWin1 = loadSound("assets/charterWin1.m4a");
   cWin2 = loadSound("assets/charterWin2.m4a");
 }
 
 function setup() {
-  //Screen for the grid
+  //Screen for the grid(by Pouya)
   if (windowWidth > windowHeight) {
     createCanvas(windowHeight, windowHeight);
   } else {
     createCanvas(windowWidth, windowWidth);
   }
   
+  //Setting the mode(by Pouya)
   state = 1;
   
+  //Setting text location on the buttons(by Pouya)
   rectMode(CENTER);
   textAlign(CENTER);
 
