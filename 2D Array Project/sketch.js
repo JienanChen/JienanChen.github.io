@@ -30,25 +30,25 @@ let cWin1, cWin2;
 
 function preload() {
   soundFormats('wav','m4a');
-  sLoss1 = loadSound("MuhammadLoss1.m4a");
-  sLoss2 = loadSound("MuhammadLoss2.m4a");
-  sLoss3 = loadSound("MuhammadLoss3.m4a");
-  sLoss4 = loadSound("MuhammadLoss4.m4a");
-  sLoss5 = loadSound("MuhammadLoss5.m4a");
+  sLoss1 = loadSound("assets/MuhammadLoss1.m4a");
+  sLoss2 = loadSound("assets/MuhammadLoss2.m4a");
+  sLoss3 = loadSound("assets/MuhammadLoss3.m4a");
+  sLoss4 = loadSound("assets/MuhammadLoss4.m4a");
+  sLoss5 = loadSound("assets/MuhammadLoss5.m4a");
   
-  sWin1 = loadSound("MuhammadVictory1.m4a");
-  sWin2 = loadSound("MuhammadVictory2.m4a");
-  sWin3 = loadSound("MuhammadVictory3.m4a");
+  sWin1 = loadSound("assets/MuhammadVictory1.m4a");
+  sWin2 = loadSound("assets/MuhammadVictory2.m4a");
+  sWin3 = loadSound("assets/MuhammadVictory3.m4a");
   
-  cLoss1 = loadSound("charterLoss1.m4a");
-  cLoss2 = loadSound("charterLoss2.m4a");
-  cLoss3 = loadSound("charterLoss3.m4a");
-  cLoss4 = loadSound("charterLoss4.m4a");
-  cLoss5 = loadSound("charterLoss5.m4a");
-  cLoss6 = loadSound("charterLoss6.wav");
+  cLoss1 = loadSound("assets/charterLoss1.m4a");
+  cLoss2 = loadSound("assets/charterLoss2.m4a");
+  cLoss3 = loadSound("assets/charterLoss3.m4a");
+  cLoss4 = loadSound("assets/charterLoss4.m4a");
+  cLoss5 = loadSound("assets/charterLoss5.m4a");
+  cLoss6 = loadSound("assets/charterLoss6.wav");
   
-  cWin1 = loadSound("charterWin1.m4a");
-  cWin2 = loadSound("charterWin2.m4a");
+  cWin1 = loadSound("assets/charterWin1.m4a");
+  cWin2 = loadSound("assets/charterWin2.m4a");
 }
 
 function setup() {
