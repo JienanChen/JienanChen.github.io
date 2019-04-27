@@ -97,7 +97,6 @@ function setup() {
   gridsDrawn=0
 }
 
-
 function draw() {
   //displays the appropriate images on the screen depending on the mode(by Pouya, edited by Jienan)
   if (state === 1) {    
@@ -106,7 +105,6 @@ function draw() {
   if (state === 2) {
     introductionMenu();
   }
-  
   if (state === "Spasky") {
     gridSize = 3;
     grid = placeEnemies(gridSize, gridSize);
