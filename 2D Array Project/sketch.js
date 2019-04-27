@@ -77,18 +77,18 @@ function setup() {
   rectMode(CENTER);
   textAlign(CENTER);
 
-  //Setting up the grid
+  //Setting up the grid(by Jienan)
   grid = placeEnemies(gridSize, gridSize);
   gridSize = 0;
   cellSize = 0;
 
-  //Assigning start menu button values
+  //Assigning start menu button values(by Pouya)
   startButtonX = width / 2;
   startButtonY = height / 2;
   startButtonWidth = 250;
   startButtonHeight = 125;
 
-  //Introduction menu button placement/values
+  //Introduction menu button placement/values(by Pouya)
   buttonX = width / 2;
   buttonY = height / 8;
   buttonWidth = width / 2;
@@ -99,6 +99,7 @@ function setup() {
 
 
 function draw() {
+  //displays the appropriate images on the screen depending on the mode(by Pouya, edited by Jienan)
   if (state === 1) {    
     loadStartScreen();
   }
@@ -121,6 +122,7 @@ function draw() {
 }
 
 function loadStartScreen() {
+  //display a large button on which is printed "start" (by Pouya)
   if (state === 1) {
     background("brown");
     fill("white");
@@ -136,54 +138,16 @@ function loadStartScreen() {
   }
 }
 
-function mousePressed() {
-  clicked = true;
-  cellSize = width/gridSize;
-  let xcoord = floor(mouseX / cellSize);
-  let ycoord = floor(mouseY / cellSize);
-  if (state === 2) {
-    for (let i = 0; i < buttonAndTextPlacement.length; i++) {
-      if (mouseX > buttonX - buttonWidth / 2 & mouseX < buttonX + buttonWidth / 2 & mouseY > buttonAndTextPlacement[i] * buttonY - buttonHeight / 2 & mouseY < buttonAndTextPlacement[i] * buttonY + buttonHeight / 2){
-        
-        state = difficulty[i];
-    }
-  }
-  }
-
-  if  (gridsDrawn===1){
-    if (state === "Spasky" && grid[ycoord][xcoord] === 1 ) {
-      stopAllSounds();
-      playSpaskyWinSound();
-      grid[ycoord][xcoord] = 2;
-      displayGrid();
-    } 
-  
-   else if (state === "Spasky" && grid[ycoord][xcoord] === 0){
-      stopAllSounds();
-      playSpaskyLossSound();
-    }
-    
-    else if (state === "Charter" && grid[ycoord][xcoord] === 1 ) {
-      stopAllSounds();
-      playCharterWinSound();
-      grid[ycoord][xcoord] = 2;
-      displayGrid();
-    }
-    else if (state === "Charter" && grid[ycoord][xcoord] === 0){
-      stopAllSounds();
-      playCharterLossSound();
-    }
-  }
-}
-
 function clickedOnStartButton() {
+  //detects whether or not the mouse is within the boundaries of the 'start" button (by Pouya)
   return mouseX >= startButtonX - startButtonWidth / 2 &&
     mouseX <= startButtonX + startButtonWidth / 2 &&
     mouseY >= startButtonY - startButtonHeight / 2 &&
     mouseY <= startButtonY + startButtonHeight / 2;
 }
 
-function introductionMenu() {
+function introductionMenu(){
+  //sets up the background and other settings for the menu page with two modes(by Pouya)
   if (state === 2) {
     background("black");
     fill("white");
@@ -194,6 +158,7 @@ function introductionMenu() {
 }
 
 function drawButtons() {
+  //draws two buttons, on which are the names of the modes(by Pouya)
   textSize(size);
   for (let i = 0; i < buttonAndTextPlacement.length; i++) {
     rect(buttonX, buttonAndTextPlacement[i] * buttonY, buttonWidth, buttonHeight);
@@ -201,7 +166,8 @@ function drawButtons() {
   }
 }
 
-function displayGrid() { 
+function displayGrid() {
+  //displays the grids(adapted by Jienan) 
   cellSize=width/gridSize
   rectMode(CORNER);
   stroke(0);
@@ -219,6 +185,7 @@ function displayGrid() {
 }
 
 function placeEnemies(cols, rows) {
+  //responsible for furnishing displayGrid() with info, and also where to place the Blavikens(adapted by Jienan) 
   let blackCols = [];
   let free = []
   let emptyArray = [];
@@ -241,11 +208,14 @@ function placeEnemies(cols, rows) {
     }
     blackCols.push(choice);
   }
-  gridsDrawn=1
+  //moderates when the sounds portion of the code should start running
+  gridsDrawn = 1
+  //returns the necessary info for the grids to be drawn properly
   return emptyArray
 }
 
 function playSpaskyLossSound(){
+  //When no Blaviken is found in the Spasky mode(by Jienan)
   let choices = [1,2,3,4,5];
   choice = random(choices);
   if (choice === 1){
@@ -271,6 +241,7 @@ function playSpaskyLossSound(){
 }
 
 function playCharterLossSound(){
+  //When no Blaviken is found in the Charter mode(by Jienan)
   let choices = [1,2,3,4,5,6];
   choice = random(choices);
   if (choice === 1){
@@ -300,6 +271,7 @@ function playCharterLossSound(){
 }
 
 function playSpaskyWinSound(){
+  //When Blaviken is found in the Spasky mode(by Jienan)
   let choices = [1,2,3];
   choice = random(choices);
   if (choice === 1){
@@ -317,6 +289,7 @@ function playSpaskyWinSound(){
 }
 
 function playCharterWinSound(){
+  //When Blaviken is found in the Charter mode(by Jienan)
   let choices = [1,2];
   choice = random(choices);
   if (choice === 1){
@@ -330,23 +303,65 @@ function playCharterWinSound(){
 }
 
 function stopAllSounds(){
+  //stops the sounds(by Jienan)
+
+  //Spasky loss sounds
   sLoss1.stop();
   sLoss2.stop();
   sLoss3.stop();
   sLoss4.stop();
   sLoss5.stop();
-  
+  //Spasky win sounds
   sWin1.stop();
   sWin2.stop();
   sWin3.stop();
-  
+  //Charter loss sounds
   cLoss1.stop();
   cLoss2.stop();
   cLoss3.stop();
   cLoss4.stop();
   cLoss5.stop();
   cLoss6.stop();
-  
+  //Charter win sounds
   cWin1.stop();
   cWin2.stop();
+}
+
+function mousePressed() {
+  //changing states during the mode selection page(by Pouya)
+  clicked = true;
+  cellSize = width/gridSize;
+  let xcoord = floor(mouseX / cellSize);
+  let ycoord = floor(mouseY / cellSize);
+  if (state === 2) {
+    for (let i = 0; i < buttonAndTextPlacement.length; i++) {
+      if (mouseX > buttonX - buttonWidth / 2 & mouseX < buttonX + buttonWidth / 2 & mouseY > buttonAndTextPlacement[i] * buttonY - buttonHeight / 2 & mouseY < buttonAndTextPlacement[i] * buttonY + buttonHeight / 2){
+        
+        state = difficulty[i];
+    }
+  }
+  }
+  //cplaying and stopping the playing of sounds according to the modes (Spasky and Charter) and displaying Blaviken when he is found (by Jienan)
+  if  (gridsDrawn===1){
+    if (state === "Spasky" && grid[ycoord][xcoord] === 1 ) {
+      stopAllSounds();
+      playSpaskyWinSound();
+      grid[ycoord][xcoord] = 2;
+      displayGrid();
+    } 
+   else if (state === "Spasky" && grid[ycoord][xcoord] === 0){
+      stopAllSounds();
+      playSpaskyLossSound();
+    }
+    else if (state === "Charter" && grid[ycoord][xcoord] === 1 ) {
+      stopAllSounds();
+      playCharterWinSound();
+      grid[ycoord][xcoord] = 2;
+      displayGrid();
+    }
+    else if (state === "Charter" && grid[ycoord][xcoord] === 0){
+      stopAllSounds();
+      playCharterLossSound();
+    }
+  }
 }
