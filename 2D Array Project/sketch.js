@@ -10,13 +10,18 @@ let state;
 //button related global variables(by Pouya)
 let buttonText = ["Spasky", "Charter"];
 let difficulty = ["Spasky", "Charter"];
-let buttonAndTextPlacement = ["3", "6"];
+let buttonAndTextPlacement = [3, 6];
 let buttonX, buttonY, buttonWidth, buttonHeight;
 let size;
 let startButtonX, startButtonY, startButtonWidth, startButtonHeight;
 let clicked = false;
 
-//grid related global variables
+//instructions related global variables (by Jienan)
+let instructionText = ["1. Select one of the two modes.", "2. Find the Blavikens by clicking on the grids.","3. If you desire to change modes, click r."];
+let instructionPlacement = [130, 160, 190];
+
+
+//grid related global variables (adapted by Jienan)
 let gridSize;
 let grid;
 let cellSize;
@@ -101,6 +106,7 @@ function draw() {
   //displays the appropriate images on the screen depending on the mode(by Pouya, edited by Jienan)
   if (state === 1) {    
     loadStartScreen();
+    writeInstructions();
   }
   if (state === 2) {
     introductionMenu();
@@ -126,6 +132,8 @@ function draw() {
 function loadStartScreen() {
   //display a large button on which is printed "start" (by Pouya)
   if (state === 1) {
+    textAlign(CENTER);
+    textSize((floor(height / 2) - 10) / 5)
     background("brown");
     fill("white");
     stroke("grey");
@@ -140,6 +148,16 @@ function loadStartScreen() {
   }
 }
 
+function writeInstructions(){
+  console.log(height/2);
+  textAlign(LEFT);
+  textSize (height * 0.045);
+  fill(255);
+for (i = 0; i< instructionText.length; i++){
+  text(instructionText[i], 23, height/2 + instructionPlacement[i]);
+}
+}
+
 function clickedOnStartButton() {
   //detects whether or not the mouse is within the boundaries of the 'start" button (by Pouya)
   return mouseX >= startButtonX - startButtonWidth / 2 &&
@@ -151,6 +169,7 @@ function clickedOnStartButton() {
 function introductionMenu(){
   //sets up the background and other settings for the menu page with two modes(by Pouya)
   if (state === 2) {
+    textAlign(CENTER);
     background("black");
     fill("white");
     stroke("red");
@@ -365,5 +384,15 @@ function mousePressed() {
       stopAllSounds();
       playCharterLossSound();
     }
+  }
+}
+
+function keyPressed() {
+  if ((state === "One" || state === "Two") && (key === "r" || key === "R" ){
+    gridsDrawn = 0
+    state = 2;
+    rectMode(CENTER);
+    textAlign(CENTER);
+    stopAllSounds();      
   }
 }
