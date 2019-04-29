@@ -1,6 +1,6 @@
 // La redemption Game (Innitial Version)
 // Jienan Chen, Pouya Pourhaj
-// April 26, 2019
+// April 28, 2019
 //
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
@@ -124,7 +124,7 @@ function draw() {
     if (gridsDrawn===0) {
       grid = placeEnemies(gridSize, gridSize);
       displayGrid();
-       gridsDrawn = 1;
+      gridsDrawn = 1;
     }
   }
 }
@@ -229,8 +229,6 @@ function placeEnemies(cols, rows) {
     }
     blackCols.push(choice);
   }
-  //moderates when the sounds portion of the code should start running
-  gridsDrawn = 1
   //returns the necessary info for the grids to be drawn properly
   return emptyArray
 }
@@ -362,7 +360,7 @@ function mousePressed() {
     }
   }
   }
-  //cplaying and stopping the playing of sounds according to the modes (Spasky and Charter) and displaying Blaviken when he is found (by Jienan)
+  //playing and stopping the playing of sounds according to the modes (Spasky and Charter) and displaying Blaviken when he is found (by Jienan)
   if  (gridsDrawn===1){
     if (state === "Spasky" && grid[ycoord][xcoord] === 1 ) {
       stopAllSounds();
@@ -388,7 +386,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  if ((state === "One" || state === "Two") && (key === "r" || key === "R" ){
+  if ((state === "Spasky" || state === "Charter") && (key === "r" || key === "R" )){
     gridsDrawn = 0
     state = 2;
     rectMode(CENTER);
