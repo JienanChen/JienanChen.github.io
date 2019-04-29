@@ -107,15 +107,19 @@ function draw() {
   }
   if (state === "Spasky") {
     gridSize = 3;
-    grid = placeEnemies(gridSize, gridSize);
-    displayGrid();
-    noLoop();
+    if (gridsDrawn===0) {
+      grid = placeEnemies(gridSize, gridSize);
+      displayGrid();
+      gridsDrawn = 1;
+      }
   }
   if (state === "Charter") {
     gridSize = 8;
-    grid = placeEnemies(gridSize, gridSize);
-    displayGrid();
-    noLoop();
+    if (gridsDrawn===0) {
+      grid = placeEnemies(gridSize, gridSize);
+      displayGrid();
+       gridsDrawn = 1;
+    }
   }
 }
 
