@@ -17,7 +17,7 @@ let startButtonX, startButtonY, startButtonWidth, startButtonHeight;
 let clicked = false;
 
 //Instructions related global variables (by Jienan)
-let instructionText = ["1. Select one of the two modes.", "2. Find the enemies by clicking on the grids.","3. If you desire to change modes, click r."];
+let instructionText = ["1. Select one of the two modes.", "2. Find the enemies by clicking on the grid.","3. If you desire to change modes, click r."];
 let instructionPlacement = [130, 160, 190];
 
 
@@ -36,7 +36,7 @@ let sWin1, sWin2, sWin3;
 let cLoss1, cLoss2, cLoss3, cLoss4, cLoss5, cLoss6;
 let cWin1, cWin2;
 
-function preload() {
+function preload(){
   //Preload sounds(Text within the function by Jienan. The function already exists.)
 
   //ensures audio compatibility
@@ -69,7 +69,7 @@ function preload() {
 
 function setup() {
   //Screen for the grid(by Pouya)
-  if (windowWidth > windowHeight) {
+  if (windowWidth > windowHeight){
     createCanvas(windowHeight, windowHeight);
   } else {
     createCanvas(windowWidth, windowWidth);
@@ -99,19 +99,19 @@ function setup() {
   buttonWidth = width / 2;
   buttonHeight = (height / 2 - 10) / 2;
   size = (height / 2 - 10) / 4;
-  gridsDrawn=0
+  gridsDrawn = 0;
 }
 
 function draw() {
   //Displays the appropriate images on the screen depending on the mode(by Pouya, fixed by Jienan)
-  if (state === 1) {    
+  if (state === 1){    
     loadStartScreen();
     writeInstructions();
   }
-  if (state === 2) {
+  if (state === 2){
     introductionMenu();
   }
-  if (state === "Spasky") {
+  if (state === "Spasky"){
     gridSize = 3;
     if (gridsDrawn===0) {
       grid = placeEnemies(gridSize, gridSize);
@@ -119,9 +119,9 @@ function draw() {
       gridsDrawn = 1;
       }
   }
-  if (state === "Charter") {
+  if (state === "Charter"){
     gridSize = 8;
-    if (gridsDrawn===0) {
+    if (gridsDrawn===0){
       grid = placeEnemies(gridSize, gridSize);
       displayGrid();
       gridsDrawn = 1;
@@ -129,7 +129,7 @@ function draw() {
   }
 }
 
-function loadStartScreen() {
+function loadStartScreen(){
   //display a large button on which is printed "start" (adapted by Pouya from Jienan's Le Chartier Project, fixed by Jienan)
   textAlign(CENTER);
   textSize((floor(height / 2) - 10) / 5);
@@ -156,7 +156,7 @@ for (i = 0; i< instructionText.length; i++){
   } 
 }
 
-function clickedOnStartButton() {
+function clickedOnStartButton(){
   //Detects whether or not the mouse is within the boundaries of the 'start" button (by Pouya)
   return mouseX >= startButtonX - startButtonWidth / 2 &&
     mouseX <= startButtonX + startButtonWidth / 2 &&
@@ -174,7 +174,7 @@ function introductionMenu(){
     drawButtons();
 }
 
-function drawButtons() {
+function drawButtons(){
   //Draws two buttons, on which are the names of the modes(adapted by Pouya from Jienan's Le Chartier Project)
   textSize(size);
   for (let i = 0; i < buttonAndTextPlacement.length; i++) {
@@ -183,14 +183,14 @@ function drawButtons() {
   }
 }
 
-function displayGrid() {
+function displayGrid(){
   //Displays the grids(adapted by Jienan from Mr. Schellenberg's Game of Life Demo) 
   cellSize=width/gridSize;
   rectMode(CORNER);
   stroke(0);
   for (let y = 0; y < gridSize; y++) {
     for (let x = 0; x < gridSize; x++) { 
-      if (grid[y][x] === 0 || grid[y][x] === 1) {
+      if (grid[y][x] === 0 || grid[y][x] === 1){
         fill(255);
       }
       else {
@@ -201,23 +201,23 @@ function displayGrid() {
   }
 }
 
-function placeEnemies(cols, rows) {
+function placeEnemies(cols, rows){
   //Responsible for furnishing displayGrid() with info, and also where to place the Blavikens(adapted by Jienan from Mr. Schellenberg's Game of Life Demo) 
   let blackCols = [];
   let free = []
   let emptyArray = [];
   
-  for (let h = 0; h < gridSize; h++) {
+  for (let h = 0; h < gridSize; h++){
     //Controls the number of Blavikens placed randomly
     free.push([h]);
   }
-  for (let i = 0; i < rows; i++) {
+  for (let i = 0; i < rows; i++){
     emptyArray.push([]);
     choice = random(free);
-    while (blackCols.includes(choice)) {
+    while (blackCols.includes(choice)){
       choice = random(free);
     }
-    for (let j = 0; j < cols; j++) {
+    for (let j = 0; j < cols; j++){
       if (j == choice) {
         emptyArray[i].push(1)
       } else {
@@ -289,7 +289,7 @@ function playCharterLossSound(){
 
 function playSpaskyWinSound(){
   //When Blaviken is found in the Spasky mode(by Jienan)
-  let choices = [1, 2,3];
+  let choices = [1, 2, 3];
   choice = random(choices);
   if (choice === 1){
     sWin1.setVolume(0.5);
@@ -307,7 +307,7 @@ function playSpaskyWinSound(){
 
 function playCharterWinSound(){
   //When Blaviken is found in the Charter mode(by Jienan)
-  let choices = [1,2];
+  let choices = [1, 2];
   choice = random(choices);
   if (choice === 1){
     cWin1.setVolume(1.0);
