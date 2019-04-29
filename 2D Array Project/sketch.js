@@ -7,7 +7,7 @@
 
 let state;
 
-//button related global variables(by Pouya)
+//Button related global variables(by Pouya)
 let buttonText = ["Spasky", "Charter"];
 let difficulty = ["Spasky", "Charter"];
 let buttonAndTextPlacement = [3, 6];
@@ -16,18 +16,18 @@ let size;
 let startButtonX, startButtonY, startButtonWidth, startButtonHeight;
 let clicked = false;
 
-//instructions related global variables (by Jienan)
+//Instructions related global variables (by Jienan)
 let instructionText = ["1. Select one of the two modes.", "2. Find the Blavikens by clicking on the grids.","3. If you desire to change modes, click r."];
 let instructionPlacement = [130, 160, 190];
 
 
-//grid related global variables (adapted by Jienan)
+//Grid related global variables (adapted by Jienan)
 let gridSize;
 let grid;
 let cellSize;
 let gridsDrawn
 
-//sounds related global variables(by Jienan)
+//Sounds related global variables(by Jienan)
 //Spasky sounds
 let sLoss1, sLoss2, sLoss3, sLoss4, sLoss5;
 let sWin1, sWin2, sWin3;
@@ -36,25 +36,25 @@ let sWin1, sWin2, sWin3;
 let cLoss1, cLoss2, cLoss3, cLoss4, cLoss5, cLoss6;
 let cWin1, cWin2;
 
-//preload sounds(by Jienan)
 function preload() {
+  //Preload sounds(Text within the function by Jienan. The function already exists.)
 
   //ensures audio compatibility
   soundFormats('wav','m4a');
 
-  //sounds to be played in the Spasky mode when Blaviken is not found
+  //Sounds to be played in the Spasky mode when Blaviken is not found
   sLoss1 = loadSound("assets/MuhammadLoss1.m4a");
   sLoss2 = loadSound("assets/MuhammadLoss2.m4a");
   sLoss3 = loadSound("assets/MuhammadLoss3.m4a");
   sLoss4 = loadSound("assets/MuhammadLoss4.m4a");
   sLoss5 = loadSound("assets/MuhammadLoss5.m4a");
   
-  //otherwise, in Spasky mode
+  //Otherwise, in Spasky mode
   sWin1 = loadSound("assets/MuhammadVictory1.m4a");
   sWin2 = loadSound("assets/MuhammadVictory2.m4a");
   sWin3 = loadSound("assets/MuhammadVictory3.m4a");
   
-  //sounds to be played in the Charter mode when Blaviken is not found
+  //Sounds to be played in the Charter mode when Blaviken is not found
   cLoss1 = loadSound("assets/charterLoss1.m4a");
   cLoss2 = loadSound("assets/charterLoss2.m4a");
   cLoss3 = loadSound("assets/charterLoss3.m4a");
@@ -62,7 +62,7 @@ function preload() {
   cLoss5 = loadSound("assets/charterLoss5.m4a");
   cLoss6 = loadSound("assets/charterLoss6.wav");
   
-  //otherwise, in Charter mode
+  //Otherwise, in Charter mode
   cWin1 = loadSound("assets/charterWin1.m4a");
   cWin2 = loadSound("assets/charterWin2.m4a");
 }
@@ -103,7 +103,7 @@ function setup() {
 }
 
 function draw() {
-  //displays the appropriate images on the screen depending on the mode(by Pouya, edited by Jienan)
+  //Displays the appropriate images on the screen depending on the mode(by Pouya, fixed by Jienan)
   if (state === 1) {    
     loadStartScreen();
     writeInstructions();
@@ -130,36 +130,34 @@ function draw() {
 }
 
 function loadStartScreen() {
-  //display a large button on which is printed "start" (by Pouya)
-  if (state === 1) {
-    textAlign(CENTER);
-    textSize((floor(height / 2) - 10) / 5)
-    background("brown");
-    fill("white");
-    stroke("grey");
-    rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
-    strokeWeight(3);
-    stroke("black");
-    text("Start", startButtonX, startButtonY);
-    textSize(startButtonWidth / 5, startButtonHeight / 5);
-    if (clickedOnStartButton() && clicked) {
-      state = 2;
-    }
+  //display a large button on which is printed "start" (adapted by Pouya from Jienan's Le Chartier Project, fixed by Jienan)
+  textAlign(CENTER);
+  textSize((floor(height / 2) - 10) / 5)
+  background("brown");
+  fill("white");
+  stroke("grey");
+  rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
+  strokeWeight(3);
+  stroke("black");
+  text("Start", startButtonX, startButtonY);
+  textSize(startButtonWidth / 5, startButtonHeight / 5);
+  if (clickedOnStartButton() && clicked) {
+    state = 2;
   }
 }
 
 function writeInstructions(){
-  console.log(height/2);
+  //Writes out instructions (temporary ones) beneath the start button (by Jienan)
   textAlign(LEFT);
   textSize (height * 0.045);
   fill(255);
 for (i = 0; i< instructionText.length; i++){
   text(instructionText[i], 23, height/2 + instructionPlacement[i]);
-}
+  } 
 }
 
 function clickedOnStartButton() {
-  //detects whether or not the mouse is within the boundaries of the 'start" button (by Pouya)
+  //Detects whether or not the mouse is within the boundaries of the 'start" button (by Pouya)
   return mouseX >= startButtonX - startButtonWidth / 2 &&
     mouseX <= startButtonX + startButtonWidth / 2 &&
     mouseY >= startButtonY - startButtonHeight / 2 &&
@@ -167,19 +165,17 @@ function clickedOnStartButton() {
 }
 
 function introductionMenu(){
-  //sets up the background and other settings for the menu page with two modes(by Pouya)
-  if (state === 2) {
+  //Sets up the background and other settings for the menu page with two modes(by Pouya, edited by Jienan)
     textAlign(CENTER);
     background("black");
     fill("white");
     stroke("red");
     strokeWeight(3);
     drawButtons();
-  }
 }
 
 function drawButtons() {
-  //draws two buttons, on which are the names of the modes(by Pouya)
+  //Draws two buttons, on which are the names of the modes(adapted by Pouya from Jienan's Le Chartier Project)
   textSize(size);
   for (let i = 0; i < buttonAndTextPlacement.length; i++) {
     rect(buttonX, buttonAndTextPlacement[i] * buttonY, buttonWidth, buttonHeight);
@@ -188,7 +184,7 @@ function drawButtons() {
 }
 
 function displayGrid() {
-  //displays the grids(adapted by Jienan) 
+  //Displays the grids(adapted by Jienan from Mr. Schellenberg's Game of Life Demo) 
   cellSize=width/gridSize
   rectMode(CORNER);
   stroke(0);
@@ -206,12 +202,13 @@ function displayGrid() {
 }
 
 function placeEnemies(cols, rows) {
-  //responsible for furnishing displayGrid() with info, and also where to place the Blavikens(adapted by Jienan) 
+  //Responsible for furnishing displayGrid() with info, and also where to place the Blavikens(adapted by Jienan from Mr. Schellenberg's Game of Life Demo) 
   let blackCols = [];
   let free = []
   let emptyArray = [];
   
   for (let h = 0; h < gridSize; h++) {
+    //Controls the number of Blavikens placed randomly
     free.push([h]);
   }
   for (let i = 0; i < rows; i++) {
@@ -227,6 +224,7 @@ function placeEnemies(cols, rows) {
         emptyArray[i].push(0);
       }
     }
+    //Works with free to moderate number of Blavikens
     blackCols.push(choice);
   }
   //returns the necessary info for the grids to be drawn properly
@@ -235,7 +233,7 @@ function placeEnemies(cols, rows) {
 
 function playSpaskyLossSound(){
   //When no Blaviken is found in the Spasky mode(by Jienan)
-  let choices = [1,2,3,4,5];
+  let choices = [1, 2, 3, 4, 5];
   choice = random(choices);
   if (choice === 1){
     sLoss1.setVolume(0.3);
@@ -291,7 +289,7 @@ function playCharterLossSound(){
 
 function playSpaskyWinSound(){
   //When Blaviken is found in the Spasky mode(by Jienan)
-  let choices = [1,2,3];
+  let choices = [1, 2,3];
   choice = random(choices);
   if (choice === 1){
     sWin1.setVolume(0.5);
@@ -322,7 +320,7 @@ function playCharterWinSound(){
 }
 
 function stopAllSounds(){
-  //stops the sounds(by Jienan)
+  //Stops the sounds(by Jienan)
 
   //Spasky loss sounds
   sLoss1.stop();
@@ -347,7 +345,7 @@ function stopAllSounds(){
 }
 
 function mousePressed() {
-  //changing states during the mode selection page(by Pouya)
+  //Changing states during the mode selection page(adapted by Pouya from Jienan's Le Chartier Project)
   clicked = true;
   cellSize = width/gridSize;
   let xcoord = floor(mouseX / cellSize);
@@ -360,7 +358,7 @@ function mousePressed() {
     }
   }
   }
-  //playing and stopping the playing of sounds according to the modes (Spasky and Charter) and displaying Blaviken when he is found (by Jienan)
+  //Playing and stopping the playing of sounds according to the modes (Spasky and Charter) and displaying Blaviken when he is found (adapted by Jienan from Mr. Schellenberg's Game of Life Demo)
   if  (gridsDrawn===1){
     if (state === "Spasky" && grid[ycoord][xcoord] === 1 ) {
       stopAllSounds();
