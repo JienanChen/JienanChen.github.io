@@ -17,7 +17,7 @@ let startButtonX, startButtonY, startButtonWidth, startButtonHeight;
 let clicked = false;
 
 //Instructions related global variables (by Jienan)
-let instructionText = ["1. Select one of the two modes.", "2. Find the Blavikens by clicking on the grids.","3. If you desire to change modes, click r."];
+let instructionText = ["1. Select one of the two modes.", "2. Find the enemies by clicking on the grids.","3. If you desire to change modes, click r."];
 let instructionPlacement = [130, 160, 190];
 
 
@@ -132,7 +132,7 @@ function draw() {
 function loadStartScreen() {
   //display a large button on which is printed "start" (adapted by Pouya from Jienan's Le Chartier Project, fixed by Jienan)
   textAlign(CENTER);
-  textSize((floor(height / 2) - 10) / 5)
+  textSize((floor(height / 2) - 10) / 5);
   background("brown");
   fill("white");
   stroke("grey");
@@ -185,7 +185,7 @@ function drawButtons() {
 
 function displayGrid() {
   //Displays the grids(adapted by Jienan from Mr. Schellenberg's Game of Life Demo) 
-  cellSize=width/gridSize
+  cellSize=width/gridSize;
   rectMode(CORNER);
   stroke(0);
   for (let y = 0; y < gridSize; y++) {
@@ -385,7 +385,7 @@ function mousePressed() {
 
 function keyPressed() {
   if ((state === "Spasky" || state === "Charter") && (key === "r" || key === "R" )){
-    gridsDrawn = 0
+    gridsDrawn = 0;
     state = 2;
     rectMode(CENTER);
     textAlign(CENTER);
