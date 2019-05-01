@@ -40,7 +40,7 @@ function preload(){
   //Preload sounds(Text within the function by Jienan. The function already exists.)
 
   //ensures audio compatibility
-  soundFormats('wav','m4a');
+  soundFormats("wav","m4a");
 
   //Sounds to be played in the Spasky mode when Blaviken is not found
   sLoss1 = loadSound("assets/MuhammadLoss1.m4a");
@@ -113,7 +113,7 @@ function draw() {
   }
   if (state === "Spasky"){
     gridSize = 3;
-    if (gridsDrawn===0) {
+    if (gridsDrawn===0){
       grid = placeEnemies(gridSize, gridSize);
       displayGrid();
       gridsDrawn = 1;
@@ -188,7 +188,7 @@ function displayGrid(){
   cellSize=width/gridSize;
   rectMode(CORNER);
   stroke(0);
-  for (let y = 0; y < gridSize; y++) {
+  for (let y = 0; y < gridSize; y++){
     for (let x = 0; x < gridSize; x++) { 
       if (grid[y][x] === 0 || grid[y][x] === 1){
         fill(255);
@@ -204,7 +204,7 @@ function displayGrid(){
 function placeEnemies(cols, rows){
   //Responsible for furnishing displayGrid() with info, and also where to place the Blavikens(adapted by Jienan from Mr. Schellenberg's Game of Life Demo) 
   let blackCols = [];
-  let free = []
+  let free = [];
   let emptyArray = [];
   
   for (let h = 0; h < gridSize; h++){
@@ -218,8 +218,8 @@ function placeEnemies(cols, rows){
       choice = random(free);
     }
     for (let j = 0; j < cols; j++){
-      if (j == choice) {
-        emptyArray[i].push(1)
+      if (j == choice){
+        emptyArray[i].push(1);
       } else {
         emptyArray[i].push(0);
       }
@@ -228,7 +228,7 @@ function placeEnemies(cols, rows){
     blackCols.push(choice);
   }
   //returns the necessary info for the grids to be drawn properly
-  return emptyArray
+  return emptyArray;
 }
 
 function playSpaskyLossSound(){
@@ -353,11 +353,11 @@ function mousePressed() {
   if (state === 2) {
     for (let i = 0; i < buttonAndTextPlacement.length; i++) {
       if (mouseX > buttonX - buttonWidth / 2 & mouseX < buttonX + buttonWidth / 2 & mouseY > buttonAndTextPlacement[i] * buttonY - buttonHeight / 2 & mouseY < buttonAndTextPlacement[i] * buttonY + buttonHeight / 2){
-        
         state = difficulty[i];
     }
   }
   }
+
   //Playing and stopping the playing of sounds according to the modes (Spasky and Charter) and displaying Blaviken when he is found (adapted by Jienan from Mr. Schellenberg's Game of Life Demo)
   if  (gridsDrawn===1){
     if (state === "Spasky" && grid[ycoord][xcoord] === 1 ) {
