@@ -1,4 +1,4 @@
-// Le Chartier's Principle Teaching Tool (for Ms. Sun)
+// Le Chartier's Principle Teaching Tool (For Ms. Sun, Dedicated to the Memory of King Wen Lie of Shan)
 // Jienan Chen
 // March 25, 2019
 //
