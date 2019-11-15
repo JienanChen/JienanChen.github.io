@@ -69,6 +69,39 @@ https://youtu.be/TzSxTkwj3Kk
 ## My Room In a Nutshell
 https://youtu.be/9s7mnGuX_Jg
 
+## Back to School
+https://youtu.be/p_Pi5z1Pxgw
+
+## Sleepless Night - First Day
+https://youtu.be/nKQbJEiF7Rc
+
+## Greetings From Edmonton!
+https://youtu.be/uWRA8kvNh20
+
+## Walking Back From the Arts Building
+https://youtu.be/4Exa2W8sYXQ
+
+## Walking Through HUB Mall
+https://youtu.be/AyXL7fwEuqs
+
+## La rédemption - Halloween Edit
+https://youtu.be/SjqBva8PGgs
+
+## Roger Dances
+https://youtu.be/PGNjjY7M_jc
+
+## Sleepless Night: Peer Editing
+https://youtu.be/xEcnMR8oao4
+
+## A Year Ago...
+https://youtu.be/GzMaWzNoatY
+
+## November 11
+https://youtu.be/N4sTpAAI7ro
+
+## Sleepless Night: Late Night Practicing
+https://youtu.be/U3gMcK37w9k
+
 
 
 
