@@ -96,11 +96,11 @@ function episodePage(){
   textSize(height*0.0475);
   text("Use the numerical keys on your keyboard to select an episode of the show to listen to.\n 1 on your keyboard corresponds to the first episode, 2 corresponds to the second etc. \n Press BACKSPACE to pause the episode, ENTER to resume playing and DELETE \n to stop the episode.", width*0.05, height/3.78 );
   textSize(height*0.0325);
-  text("Episode 1 - Sleepless Night\n Episode 2 - Moving\n Episode 3 - I Miss Home\n Episode 4 - First Day\n Episode 5 - Peer Editing\n Episode 6 - Late Night Practicing", width*0.05, height/2);
+  text("\n Episode 1 - Sleepless Night\n Episode 2 - Moving\n Episode 3 - I Miss Home\n Episode 4 - First Day\n Episode 5 - Peer Editing\n Episode 6 - Late Night Practicing", width*0.05, height/2);
 }
 
 function mousePressed(){
-  if (mouseX > width/2 - width/2.5/2  & mouseX < width/2 + width/2.5/2 & mouseY >  height/1.3 - height/7 & mouseY < height/1.3 + height/7/2) {
+  if (mouseX >= width/2 && mouseX <= width/2 + width/2.5 && mouseY >=  height/1.3 - height/7 & mouseY <= height/1.3 + height/7) {
     state = 1;
     //console.log("yes");
   }
@@ -108,7 +108,7 @@ function mousePressed(){
 
 function keyPressed(){
   if (state === 1){
-    if (keyCode === 49 || keyCode === 97 || keyCode === ENTER && ! isPlaying(ep1)){
+    if (! ep1.isPlaying() && keyCode === 49 || keyCode === 97 || keyCode === ENTER){
       ep1.setVolume(1.0);
       ep1.play();
       }
