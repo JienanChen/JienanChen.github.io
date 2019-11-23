@@ -12,6 +12,7 @@ let img2;
 let pic;
 
 let ep1;
+let ep2;
 
 let state;
 
@@ -21,7 +22,11 @@ function preload() {
   img2 = loadImage("assets/night2.jpg");
 
   ep1 = loadSound("assets/1.mp3");
-
+  ep2 = loadSound("assets/2.mp3");
+  ep3 = loadSound("assets/3.mp3");
+  ep4 = loadSound("assets/4.mp3");
+  ep5 = loadSound("assets/5.mp3");
+  ep6 = loadSound("assets/6.mp3");
 
 }
 
@@ -111,12 +116,56 @@ function keyPressed(){
     if (! ep1.isPlaying() && keyCode === 49 || keyCode === 97 || keyCode === ENTER){
       ep1.setVolume(1.0);
       ep1.play();
+    }
+
+    if (! ep2.isPlaying() && keyCode === 50 || keyCode === 98 || keyCode === ENTER){
+        ep2.setVolume(1.0);
+        ep2.play();
       }
     }
+
+    if (! ep3.isPlaying() && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
+      ep3.setVolume(1.0);
+      ep3.play();
+    }
+
+    if (! ep3.isPlaying() && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
+      ep4.setVolume(1.0);
+      ep4.play();
+    }
+
+    if (! ep3.isPlaying() && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
+      ep5.setVolume(1.0);
+      ep5.play();
+    }
+
+    if (! ep3.isPlaying() && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
+      ep6.setVolume(1.0);
+      ep6.play();
+    }
+
     if (keyCode === BACKSPACE){
-      ep1.pause();
+      pauseSoundsMaster();
     }
     if (keyCode === DELETE){
-      ep1.stop();
+      stopSoundsMaster();
     }
   }
+
+function pauseSoundsMaster(){
+  ep1.pause();
+  ep2.pause();
+  ep3.pause();
+  ep4.pause();
+  ep5.pause();
+  ep6.pause();
+}
+
+function stopSoundsMaster(){
+  ep1.stop();
+  ep2.stop();
+  ep3.stop();
+  ep4.stop();
+  ep5.stop();
+  ep6.stop();
+}
