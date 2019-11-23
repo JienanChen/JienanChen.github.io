@@ -108,9 +108,10 @@ function mousePressed(){
 
 function keyPressed(){
   if (state === 1){
-    if (keyCode === 49 || keyCode === 97 || keyCode === ENTER){
+    if (keyCode === 49 || keyCode === 97 || keyCode === ENTER && ! isPlaying(ep1)){
       ep1.setVolume(1.0);
       ep1.play();
+      }
     }
     if (keyCode === BACKSPACE){
       ep1.pause();
@@ -119,4 +120,3 @@ function keyPressed(){
       ep1.stop();
     }
   }
-}
