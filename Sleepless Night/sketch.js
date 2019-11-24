@@ -126,32 +126,32 @@ function keyPressed(){
       playing = !playing;
     }
 
-    if (! ep2.isPlaying() && playing && keyCode === 50 || keyCode === 98 || keyCode === ENTER){
+    if (! ep2.isPlaying() && playing === false && keyCode === 50 || keyCode === 98 || keyCode === ENTER){
         ep2.setVolume(1.0);
         ep2.play();
         playing = !playing;
       }
     }
 
-    if (! ep3.isPlaying() && playing && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
+    if (! ep3.isPlaying() && playing === false && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
       ep3.setVolume(1.0);
       ep3.play();
       playing = !playing;
     }
 
-    if (! ep4.isPlaying() && playing && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
+    if (! ep4.isPlaying() && playing === false && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
       ep4.setVolume(1.0);
       ep4.play();
       playing = !playing;
     }
 
-    if (! ep5.isPlaying() && playing && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
+    if (! ep5.isPlaying() && playing === false && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
       ep5.setVolume(1.0);
       ep5.play();
       playing = !playing;
     }
 
-    if (! ep6.isPlaying() && playing && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
+    if (! ep6.isPlaying() && playing === false && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
       ep6.setVolume(1.0);
       ep6.play();
       playing = !playing;
