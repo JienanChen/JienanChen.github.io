@@ -13,6 +13,12 @@ let pic;
 
 let ep1;
 let ep2;
+let ep3;
+let ep4;
+let ep5;
+let ep6;
+
+let playing;
 
 let state;
 
@@ -53,6 +59,7 @@ function setup() {
   }
   
   state = 0;
+  playing = false;
 }
 
 
@@ -113,35 +120,41 @@ function mousePressed(){
 
 function keyPressed(){
   if (state === 1){
-    if (! ep1.isPlaying() && keyCode === 49 || keyCode === 97 || keyCode === ENTER){
+    if (! ep1.isPlaying() && playing && keyCode === 49 || keyCode === 97 || keyCode === ENTER){
       ep1.setVolume(1.0);
       ep1.play();
+      playing = !playing;
     }
 
-    if (! ep2.isPlaying() && keyCode === 50 || keyCode === 98 || keyCode === ENTER){
+    if (! ep2.isPlaying() && playing && keyCode === 50 || keyCode === 98 || keyCode === ENTER){
         ep2.setVolume(1.0);
         ep2.play();
+        playing = !playing;
       }
     }
 
-    if (! ep3.isPlaying() && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
+    if (! ep3.isPlaying() && playing && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
       ep3.setVolume(1.0);
       ep3.play();
+      playing = !playing;
     }
 
-    if (! ep3.isPlaying() && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
+    if (! ep4.isPlaying() && playing && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
       ep4.setVolume(1.0);
       ep4.play();
+      playing = !playing;
     }
 
-    if (! ep3.isPlaying() && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
+    if (! ep5.isPlaying() && playing && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
       ep5.setVolume(1.0);
       ep5.play();
+      playing = !playing;
     }
 
-    if (! ep3.isPlaying() && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
+    if (! ep6.isPlaying() && playing && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
       ep6.setVolume(1.0);
       ep6.play();
+      playing = !playing;
     }
 
     if (keyCode === BACKSPACE){
@@ -149,6 +162,7 @@ function keyPressed(){
     }
     if (keyCode === DELETE){
       stopSoundsMaster();
+      playing = false;
     }
   }
 
