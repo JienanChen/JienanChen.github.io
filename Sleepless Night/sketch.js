@@ -29,10 +29,10 @@ function preload() {
 
   ep1 = loadSound("assets/1.mp3");
   ep2 = loadSound("assets/2.mp3");
-  // ep3 = loadSound("assets/3.mp3");
-  // ep4 = loadSound("assets/4.mp3");
-  // ep5 = loadSound("assets/5.mp3");
-  // ep6 = loadSound("assets/6.mp3");
+  ep3 = loadSound("assets/3.mp3");
+  ep4 = loadSound("assets/4.mp3");
+  ep5 = loadSound("assets/5.mp3");
+  //ep6 = loadSound("assets/6.mp3");
 
 }
 
@@ -133,29 +133,29 @@ function keyPressed(){
       }
     }
 
-    // if (! ep3.isPlaying() && playing === false && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
-    //   ep3.setVolume(1.0);
-    //   ep3.play();
-    //   playing = !playing;
-    // }
+    if (! ep3.isPlaying() && playing === false && keyCode === 51 || keyCode === 99 || keyCode === ENTER){
+       ep3.setVolume(1.0);
+      ep3.play();
+       playing = !playing;
+     }
 
-    // if (! ep4.isPlaying() && playing === false && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
-    //   ep4.setVolume(1.0);
-    //   ep4.play();
-    //   playing = !playing;
-    // }
+    if (! ep4.isPlaying() && playing === false && keyCode === 52 || keyCode === 100 || keyCode === ENTER){
+       ep4.setVolume(1.0);
+       ep4.play();
+      playing = !playing;
+     }
 
-    // if (! ep5.isPlaying() && playing === false && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
-    //   ep5.setVolume(1.0);
-    //   ep5.play();
-    //   playing = !playing;
-    // }
+    if (! ep5.isPlaying() && playing === false && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
+       ep5.setVolume(1.0);
+       ep5.play();
+       playing = !playing;
+     }
 
     // if (! ep6.isPlaying() && playing === false && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
-    //   ep6.setVolume(1.0);
-    //   ep6.play();
-    //   playing = !playing;
-    // }
+    //    ep6.setVolume(1.0);
+    //    ep6.play();
+    //    playing = !playing;
+    //  }
 
     if (keyCode === BACKSPACE){
       pauseSoundsMaster();
@@ -169,18 +169,17 @@ function keyPressed(){
 function pauseSoundsMaster(){
   ep1.pause();
   ep2.pause();
-//   ep3.pause();
-//   ep4.pause();
-//   ep5.pause();
-//   ep6.pause();
-// }
+  ep3.pause();
+  ep4.pause();
+  ep5.pause();
+  //ep6.pause();
+ }
 
 function stopSoundsMaster(){
   ep1.stop();
   ep2.stop();
-  // ep3.stop();
-  // ep4.stop();
-  // ep5.stop();
-  // ep6.stop();
-}
+  ep3.stop();
+  ep4.stop();
+  ep5.stop();
+  //ep6.stop();
 }
