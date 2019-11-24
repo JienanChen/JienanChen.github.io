@@ -15,8 +15,8 @@ let ep1;
 let ep2;
 let ep3;
 let ep4;
-let ep5;
-let ep6;
+//let ep5;
+//let ep6;
 
 let playing;
 
@@ -31,7 +31,7 @@ function preload() {
   ep2 = loadSound("assets/2.mp3");
   ep3 = loadSound("assets/3.mp3");
   ep4 = loadSound("assets/4.mp3");
-  ep5 = loadSound("assets/5.mp3");
+  //ep5 = loadSound("assets/5.mp3");
   //ep6 = loadSound("assets/6.mp3");
 
 }
@@ -145,11 +145,11 @@ function keyPressed(){
       playing = !playing;
      }
 
-    if (! ep5.isPlaying() && playing === false && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
-       ep5.setVolume(1.0);
-       ep5.play();
-       playing = !playing;
-     }
+    // if (! ep5.isPlaying() && playing === false && keyCode === 53 || keyCode === 101 || keyCode === ENTER){
+    //    ep5.setVolume(1.0);
+    //    ep5.play();
+    //    playing = !playing;
+    //  }
 
     // if (! ep6.isPlaying() && playing === false && keyCode === 54 || keyCode === 102 || keyCode === ENTER){
     //    ep6.setVolume(1.0);
@@ -171,7 +171,7 @@ function pauseSoundsMaster(){
   ep2.pause();
   ep3.pause();
   ep4.pause();
-  ep5.pause();
+  //ep5.pause();
   //ep6.pause();
  }
 
@@ -180,6 +180,6 @@ function stopSoundsMaster(){
   ep2.stop();
   ep3.stop();
   ep4.stop();
-  ep5.stop();
+  //ep5.stop();
   //ep6.stop();
 }
