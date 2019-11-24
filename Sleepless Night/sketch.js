@@ -120,7 +120,7 @@ function mousePressed(){
 
 function keyPressed(){
   if (state === 1){
-    if (! ep1.isPlaying() && playing && keyCode === 49 || keyCode === 97 || keyCode === ENTER){
+    if (! ep1.isPlaying() && playing === false && keyCode === 49 || keyCode === 97 || keyCode === ENTER){
       ep1.setVolume(1.0);
       ep1.play();
       playing = !playing;
