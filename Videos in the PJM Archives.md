@@ -102,7 +102,10 @@ https://youtu.be/N4sTpAAI7ro
 ## Sleepless Night: Late Night Practicing
 https://youtu.be/U3gMcK37w9k
 
+## Sleepless Night: Jienan Chen: Composer and Performer
+https://youtu.be/XMNFF44sSyY
 
-
+## Year in Review - 2018
+https://youtu.be/6E0evid8V0c
 
 
