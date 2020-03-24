@@ -126,4 +126,19 @@ https://youtu.be/SnbtSObaLBg
 ## Sleepless Night: An "Ode" to the Cold of Saskatoon
 https://youtu.be/1CF1HZUCGS4
 
+## Sleepless Night: When Computers Take Over
+https://youtu.be/ee3ymFEsxco
+
+## In Edmonton: Searching for the Winspear (Feb 8, 2020)
+https://youtu.be/4ySVzzdg28o
+
+## In Edmonton: Valentine for One (February 14, 2020)
+https://youtu.be/gxMjyPlac4w
+
+## Friday 13
+https://youtu.be/Fx83LXkOI_c
+
+## Sleepless Night: Eviction
+https://youtu.be/igGX7z3iF1s
+
 
